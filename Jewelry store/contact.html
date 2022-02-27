@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Nudimo uslugu prodaje, čišćenja i popravke nakita od zlata, srebra i bisera.">
+        <meta name="keywords" content="zlatar,zlato,zlatarska radnja,srebro,nakit">
+        <title>Site</title>
+        <script defer src="script.js"></script>
+        <style>
+                * {
+                        box-sizing: border-box;
+                }
+
+                body {
+                        font-family: "Poppins", sans-serif;
+                        line-height: 1.5;
+                        text-size-adjust: 100%;
+                        font-size: 16px;
+                }
+
+                nav {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 20%;
+                        color: #fff;
+                        background-color: rgb(44, 44, 44);
+                        padding: 8px 16px;
+                        font-size: 18px;
+                        font-weight: 700;
+                        line-height: 27px;
+                }
+
+                h3 {
+                        padding: 8px 16px;
+                        font-size: 24px;
+                        color: rgb(63, 61, 61);
+                }
+
+                p {
+                        color: inherit;
+                        font-size: larger;
+                }
+
+                #menu img {
+                        margin-right: 10px;
+                }
+
+                .menuItem {
+                        display: block;
+                        color: inherit;
+                        text-decoration: none;
+                        padding: 8px 16px;
+                }
+
+                .menuItem:hover {
+                        background-color: gray;
+                }
+
+                @keyframes fade {
+                        0% {
+                                opacity: 0;
+                        }
+
+                        100% {
+                                opacity: 1;
+                        }
+                }
+
+                .subMenuItem {
+                        color: inherit;
+                        text-decoration: none;
+                        padding: 8px 16px;
+                        display: none;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: opacity 2s, visibility 1s;
+                }
+
+                .subMenuItem:hover {
+                        background-color: gray;
+                }
+
+                #wrapper {
+                        margin-left: 25%;
+                        overflow: hidden;
+                }
+
+                h2 {
+                        margin: 10px 0;
+                        font-size: 48px;
+                        color: rgb(63, 61, 61);
+                        font-weight: 500;
+                }
+
+                h3 {
+                        font-weight: 400;
+                        padding: 0;
+                        margin: 0;
+                }
+
+                hr {
+                        width: 50px;
+                        border: 5px solid rgb(104, 252, 240);
+                        border-radius: 4px;
+                        margin-left: 0;
+                }
+
+                #bottom {
+                        display: none;
+                }
+
+                #right,
+                #bottom {
+                        margin-left: 10px;
+                }
+
+                #menuButton {
+                        display: none;
+                }
+
+                table {
+                        width: 90%;
+                }
+
+                table,
+                th,
+                td {
+                        border-collapse: collapse;
+                        text-align: center;
+                        background-color: #f5f0f0;
+                }
+
+                table th {
+                        background-color: rgb(63, 61, 61);
+                        color: white;
+                }
+
+                .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 500px;
+                        width: 600px;
+                }
+
+                .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 600px;
+                }
+
+                @media screen and (max-width: 800px) {
+                        body {
+                                margin: 0;
+                        }
+
+                        nav {
+                                width: 100%;
+                                height: auto;
+                                position: relative;
+                                text-align: center;
+                                transition: 1s;
+                                padding: 16px;
+                        }
+
+                        #menuButton {
+                                margin: 16px;
+                                display: inline;
+                                cursor: pointer;
+                        }
+
+                        #menu {
+                                overflow: hidden;
+                                transition: 1s;
+                        }
+
+                        #wrapper {
+                                margin-left: 5%;
+                        }
+
+                        .map_router,
+                        .gmap_canvas {
+                                height: auto;
+                                width: 65%;
+                        }
+                }
+        </style>
+</head>
+
+<body>
+        <nav id="nav">
+                <div style="text-align: left;font-size:30px;margin: 20px;">
+                        <a id="menuButton">☰</a><span><img loading="lazy" src="./images/logo.png" width="50px"
+                                        height="46px" alt="logo se nije ucitao">ZLATAR</span>
+                </div>
+                <div id="menu" style="clear:both">
+                        <a class="menuItem" href="home.html"><img loading="lazy" src="./images/home.png" width="30px"
+                                        height="30px" alt="ikona se nije ucitala">Početna</a>
+                        <a id="collapsible" class="menuItem" href="#showcase"><img loading="lazy"
+                                        src="./images/necklace.png" width="30px" height="30px"
+                                        alt="ikona se nije ucitala">Ponuda<img loading="lazy"
+                                        src="./images/right.png" id="right" width="15px" height="15px"
+                                        alt="ikona se nije ucitala"><img
+                                        id="bottom" width="15px" height="15px" src="./images/bottom.png" alt="ikona se nije ucitala"></a>
+                        <a class="subMenuItem" href="gold.html"><img width="30px" height="30px" src="./images/gold.png"
+                                        alt="ikona se nije ucitala">Zlato</a>
+                        <a class="subMenuItem" href="whiteGold.html"><img width="30px" height="30px"
+                                        src="./images/whiteGold.png" alt="ikona se nije ucitala">Bijelo zlato</a>
+                        <a class="subMenuItem" href="silver.html"><img width="30px" height="30px"
+                                        src="./images/silver.png" alt="ikona se nije ucitala">Srebro</a>
+                        <a class="subMenuItem" href="pearl.html"><img width="30px" height="30px"
+                                        src="./images/pearl.png" alt="ikona se nije ucitala">Biseri</a>
+                        <a class="menuItem" href="#showcase"><img loading="lazy" src="./images/contact.png" width="30px"
+                                        height="30px" alt="ikona se nije ucitala">Kontakt</a>
+                </div>
+        </nav>
+        <div id="wrapper">
+                <div id="contact">
+                        <h2>Kontakt informacije</h2>
+                        <hr />
+                        <p>Telefon:</p>
+                        <p>Dostupni smo i na:</p>
+                        <a href=""><img width="95px" height="95px" loading="lazy" src="./images/messenger.png"
+                                        alt="nije se ucitala slika"></a>
+                        <a href=""><img width="100px" height="100px" loading="lazy" src="./images/viber.png"
+                                        alt="nije se ucitala slika"></a>
+                </div>
+                <div id="workingHours">
+                        <h2>Radno vrijeme</h2>
+                        <hr />
+                        <table>
+                                <thead>
+                                        <tr>
+                                                <th>Dan</th>
+                                                <th>Otvoreno</th>
+                                                <th>Pauza</th>
+                                                <th>Otvoreno</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                                <td>Ponedeljak-Petak</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Subota</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                        </tr>
+                                        <tr>
+                                                <td>Nedelja</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+                <div id="location">
+                        <h2>Posjetite nas</h2>
+                        <hr />
+                        <p>ZR "ZLATAR"</p>
+                        <p>Adresa: Branilaca BiH, Ključ</p>
+                        <div class="mapouter">
+                                <div class="gmap_canvas">
+                                        <iframe width="600" height="500" id="gmap_canvas"
+                                                src="https://maps.google.com/maps?q=Branilaca%20BiH%2CKljuc&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                        </iframe>Google Maps Generator by <a
+                                                href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</body>
+
+</html>

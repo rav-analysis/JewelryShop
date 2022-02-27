@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Nudimo uslugu prodaje, čišćenja i popravke nakita od zlata, srebra i bisera.">
+  <meta name="keywords" content="zlatar,zlato,zlatarska radnja,srebro,nakit">
+  <title>Site</title>
+  <script defer src="script.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.5;
+      text-size-adjust: 100%;
+      font-size: 16px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 20%;
+      color: #fff;
+      background-color: rgb(44, 44, 44);
+      padding: 8px 16px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 27px;
+    }
+
+    h3 {
+      padding: 8px 16px;
+      font-size: 24px;
+      color: rgb(63, 61, 61);
+    }
+
+    p {
+      color: inherit;
+      font-size: larger;
+    }
+
+    #menu img {
+      margin-right: 10px;
+    }
+
+    .menuItem {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      padding: 8px 16px;
+    }
+
+    .menuItem:hover {
+      background-color: gray;
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .subMenuItem {
+      color: inherit;
+      text-decoration: none;
+      padding: 8px 16px;
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 2s, visibility 1s;
+    }
+
+    .subMenuItem:hover {
+      background-color: gray;
+    }
+
+    #wrapper {
+      margin-left: 25%;
+      overflow: hidden;
+    }
+
+    h2 {
+      margin: 10px 0;
+      font-size: 48px;
+      color: rgb(63, 61, 61);
+      font-weight: 500;
+    }
+
+    hr {
+      width: 50px;
+      border: 5px solid rgb(104, 252, 240);
+      border-radius: 4px;
+      margin-left: 0;
+    }
+
+    .images {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .images img {
+      width: 100%;
+      transition: transform 0.2s;
+    }
+
+    .images img:hover {
+      opacity: 0.8;
+      transform: scale(1.2);
+    }
+
+    .imageWrap {
+      position: relative;
+      width: 30%;
+    }
+
+    .imageDescription {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      color: rgb(63, 61, 61);
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 1s, visibility 1s;
+      font-size: larger;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .imageWrap:hover .imageDescription {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #bottom {
+      display: none;
+    }
+
+    #right,
+    #bottom {
+      margin-left: 10px;
+    }
+
+    #menuButton {
+      display: none;
+    }
+
+    @media screen and (max-width: 800px) {
+      nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        text-align: center;
+        transition: 1s;
+        padding: 16px;
+      }
+
+      #menuButton {
+        margin: 16px;
+        display: inline;
+        cursor: pointer;
+      }
+
+      #menu {
+        overflow: hidden;
+        transition: 1s;
+      }
+
+      #wrapper {
+        margin-left: 5%;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      #galleryDiv {
+        width: 100%;
+        margin: 0;
+      }
+
+      .imageWrap {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="nav">
+    <div style="text-align: left;font-size:30px;margin: 20px;">
+      <a id="menuButton">☰</a><span><img loading="lazy" src="./images/logo.png" width="50px" height="46px"
+          alt="logo se nije ucitao">ZLATAR</span>
+    </div>
+    <div id="menu" style="clear:both">
+      <a class="menuItem" href="home.html"><img loading="lazy" src="./images/home.png" width="30px" height="30px"
+          alt="ikona se nije ucitala">Početna</a>
+      <a id="collapsible" class="menuItem" href="#showcase"><img loading="lazy" src="./images/necklace.png" width="30px"
+          height="30px" alt="ikona se nije ucitala">Ponuda<img loading="lazy" src="./images/right.png" id="right"
+          width="15px" height="15px" alt="ikona se nije ucitala"><img
+          id="bottom" width="15px" height="15px" src="./images/bottom.png" alt="ikona se nije ucitala"></a>
+      <a class="subMenuItem" href="#showcase"><img width="30px" height="30px" src="./images/gold.png"
+          alt="ikona se nije ucitala">Zlato</a>
+      <a class="subMenuItem" href="whiteGold.html"><img width="30px" height="30px" src="./images/whiteGold.png"
+          alt="ikona se nije ucitala">Bijelo zlato</a>
+      <a class="subMenuItem" href="silver.html"><img width="30px" height="30px" src="./images/silver.png"
+          alt="ikona se nije ucitala">Srebro</a>
+      <a class="subMenuItem" href="pearl.html"><img width="30px" height="30px" src="./images/pearl.png"
+          alt="ikona se nije ucitala">Biseri</a>
+      <a class="menuItem" href="contact.html"><img loading="lazy" src="./images/contact.png" width="30px" height="30px"
+          alt="ikona se nije ucitala">Kontakt</a>
+    </div>
+  </nav>
+  <div id="wrapper">
+    <div id="galleryDiv">
+      <h2>Zlatni nakit</h2>
+      <hr />
+      <div class="images">
+        <div class="imageWrap">
+          <img src="./images/necklace1.jpg" loading="lazy" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#1<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/necklace2.jpg" class="image" data-src-small=""
+            data-src="./images/necklace2.jpg" alt="nije se ucitala slika">
+          <p class="imageDescription">#2<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/necklace3.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#3<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/ring1.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#4<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/ring2.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#5<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/ring3.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#6<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/pendant1.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#7<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/pendant2.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#8<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/pendant3.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#9<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/earrings1.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#10<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/earrings2.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#11<br>- KM</p>
+        </div>
+        <div class="imageWrap">
+          <img loading="lazy" src="./images/earrings3.jpg" class="image" alt="nije se ucitala slika">
+          <p class="imageDescription">#12<br>- KM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

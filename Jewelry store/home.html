@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Nudimo uslugu prodaje, čišćenja i popravke nakita od zlata, srebra i bisera.">
+  <meta name="keywords" content="zlatar,zlato,zlatarska radnja,srebro,nakit">
+  <title>Site</title>
+  <script defer src="script.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.5;
+      text-size-adjust: 100%;
+      font-size: 16px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 20%;
+      color: #fff;
+      background-color: rgb(44, 44, 44);
+      padding: 8px 16px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 27px;
+    }
+
+    h3 {
+      padding: 8px 16px;
+      font-size: 24px;
+      color: rgb(63, 61, 61);
+    }
+
+    p {
+      color: inherit;
+      font-size: larger;
+    }
+
+    #menu img {
+      margin-right: 10px;
+    }
+
+    .menuItem {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      padding: 8px 16px;
+    }
+
+    .menuItem:hover {
+      background-color: gray;
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .subMenuItem {
+      color: inherit;
+      text-decoration: none;
+      padding: 8px 16px;
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 2s, visibility 1s;
+    }
+
+    .subMenuItem:hover {
+      background-color: gray;
+    }
+
+    #wrapper {
+      margin-left: 25%;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 64px;
+      font-weight: 500;
+      color: rgb(63, 61, 61);
+    }
+
+    h2 {
+      margin: 10px 0;
+      font-size: 48px;
+      color: rgb(63, 61, 61);
+      font-weight: 500;
+    }
+
+    h3 {
+      font-weight: 400;
+      padding: 0;
+      margin: 0;
+    }
+
+    hr {
+      width: 50px;
+      border: 5px solid rgb(104, 252, 240);
+      border-radius: 4px;
+      margin-left: 0;
+    }
+
+    #repairing,
+    #washing {
+      width: 70%;
+      margin-right: 5%;
+    }
+
+    #bottom {
+      display: none;
+    }
+
+    #right,
+    #bottom {
+      margin-left: 10px;
+    }
+
+    #fixDiv {
+      margin: 0 auto;
+    }
+
+    #cleanDiv,
+    #teamDiv,
+    #priceDiv {
+      margin-top: 5%;
+    }
+
+    .teamColumn {
+      float: left;
+      width: 32%;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .teamDiv {
+      text-align: center;
+    }
+
+    .teamDiv::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .teamColumn div {
+      background-color: #f1f1f1;
+    }
+
+    .teamColumn div div {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .teamColumn img {
+      width: 100%;
+    }
+
+    .workerDescription {
+      color: rgb(63, 61, 61);
+    }
+
+    table {
+      width: 50%;
+      border: 1px solid rgb(63, 61, 61);
+    }
+
+    table,
+    th,
+    td {
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    table th {
+      background-color: rgb(63, 61, 61);
+      color: white;
+    }
+
+    table tr:nth-child(even) {
+      background-color: lightgray;
+    }
+
+    #menuButton {
+      display: none;
+    }
+
+    ul {
+      list-style-type: none;
+      font-size: larger;
+      margin: 3% 0% 0% 0%;
+      padding: 0;
+    }
+
+    .correct {
+      margin-left: 2%;
+    }
+
+    @media screen and (max-width: 800px) {
+      nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        text-align: center;
+        transition: 1s;
+        padding: 16px;
+      }
+
+      #menuButton {
+        margin: 16px;
+        display: inline;
+        cursor: pointer;
+      }
+
+      #menu {
+        overflow: hidden;
+        transition: 1s;
+      }
+
+      .teamColumn {
+        width: 60%;
+        margin-left: 20%;
+      }
+
+      #wrapper {
+        margin-left: 5%;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .priceList,
+      #fixDiv,
+      #cleanDiv,
+      #teamDiv {
+        width: 100%;
+        margin: 0;
+      }
+
+      #repairing,
+      #washing {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="nav">
+    <div style="text-align: left;font-size:30px;margin: 20px;">
+      <a id="menuButton">☰</a><span><img loading="lazy" src="./images/logo.png" width="50px" height="46px"
+          alt="logo se nije ucitao">ZLATAR</span>
+    </div>
+    <div id="menu" style="clear:both">
+      <a class="menuItem" href="#showcase"><img loading="lazy" src="./images/home.png" width="30px" height="30px"
+          alt="ikona se nije ucitala">Početna</a>
+      <a id="collapsible" class="menuItem" href="#showcase"><img loading="lazy" src="./images/necklace.png" width="30px"
+          height="30px" alt="ikona se nije ucitala">Ponuda<img loading="lazy" src="./images/right.png" id="right"
+          width="15px" height="15px"  alt="ikona se nije ucitala"><img
+          id="bottom" width="15px" height="15px" src="./images/bottom.png" alt="ikona se nije ucitala"></a>
+      <a class="subMenuItem" href="gold.html"><img width="30px" height="30px" src="./images/gold.png"
+          alt="ikona se nije ucitala">Zlato</a>
+      <a class="subMenuItem" href="whiteGold.html"><img width="30px" height="30px" src="./images/whiteGold.png"
+          alt="ikona se nije ucitala">Bijelo zlato</a>
+      <a class="subMenuItem" href="silver.html"><img width="30px" height="30px" src="./images/silver.png"
+          alt="ikona se nije ucitala">Srebro</a>
+      <a class="subMenuItem" href="pearl.html"><img width="30px" height="30px" src="./images/pearl.png"
+          alt="ikona se nije ucitala">Biseri</a>
+      <a class="menuItem" href="contact.html"><img loading="lazy" src="./images/contact.png" width="30px" height="30px"
+          alt="ikona se nije ucitala">Kontakt</a>
+    </div>
+  </nav>
+  <div id="wrapper">
+    <div id="priceDiv">
+      <h2>Cjenovnik</h2>
+      <hr />
+      <div class="priceList">
+        <table>
+          <thead>
+            <tr>
+              <th>Usluga</th>
+              <th>Cijena</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Popravak lančića</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Zamjena patenta po gramu</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Popravak prstena</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Zamjena kamena</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Popravak naušnica (komad)</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Prerada donesenog zlata za ruke (gram)</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Otkup lomljenog zlata (gram)</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Bušenje ušiju</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Graviranje (slovo)</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Biser (gram)</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Prodaja gotovih proizvoda od srebra (gram 925/1000)</td>
+              <td>- KM</td>
+            </tr>
+            <tr>
+              <td>Prodaja gotovih proizvoda od zlata (gram 585/1000)</td>
+              <td>- KM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Kupovinom kod nas ostvarujete pravo na:</li>
+        <li>1-2 godine garancije (proizvodi od zlata)<img width="20px" class="correct" height="20px" loading="lazy"
+            src="./images/correct.png" alt="nije se ucitala slika"></li>
+        <li>reklamaciju<img width="20px" height="20px" class="correct" loading="lazy" src="./images/correct.png"
+            alt="nije se ucitala slika"></li>
+      </ul>
+    </div>
+    <div id="fixDiv">
+      <h2>Popravak nakita</h2>
+      <hr />
+      <p>Uspješno vršimo popravak mnogih oštećenja nakita.</p>
+      <img loading="lazy" src="./images/repairing.png" id="repairing" alt="nije se ucitala slika">
+    </div>
+
+    <div id="cleanDiv">
+      <h2>Čišćenje nakita</h2>
+      <hr />
+      <p>Upotrebom savremene aparature vraćamo Vašem nakitu prirodni sjaj.</p>
+      <img loading="lazy" src="./images/washing.png" id="washing" alt="nije se ucitala slika">
+    </div>
+
+    <div id="teamDiv">
+      <h2>Ljubazno osoblje</h2>
+      <hr />
+      <div class="teamColumn">
+        <div>
+          <img loading="lazy" src="./images/Fadil.png" alt="Fadil" />
+          <div>
+            <h3>Fadil</h3>
+            <p class="workerDescription">Miran, marljiv i vješt majstor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="teamColumn">
+        <div>
+          <img loading="lazy" src="./images/Amra.png" alt="Amra" />
+          <div>
+            <h3>Amra</h3>
+            <p class="workerDescription">Vedra, nasmijana i komunikativna.</p>
+          </div>
+        </div>
+      </div>
+      <div class="teamColumn">
+        <div>
+          <img loading="lazy" src="./images/Kenan.png" alt="Kenan" />
+          <div>
+            <h3>Kenan</h3>
+            <p class="workerDescription">Mlad, optimističan i spreman da ide očevim koracima.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
